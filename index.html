@@ -8,25 +8,27 @@
 </head>
 <body>
     <div class="main">
-        <div class="image"><img src="./images/macOS-sand.jpg"></div>
         <div class="information">
-            <h1>Create an account</h1>
-            <p>Fill out the form, honestly.</p>  
+                <h1>Create an account</h1>
+                <p>Fill out the form, honestly.</p>  
             
             <form method="post">
                 <fieldset>
-                    <input type="text" placeholder="first name" id="fname">
-                    <input type="text" placeholder="last name" id="lname">
+                    <div class="name">
+                        <input type="text" placeholder="first name" id="fname" required>
+                        <input type="text" placeholder="last name" id="lname" required>
+                    </div>
                 </fieldset>
-                <fieldset>
-                    <input type="email" placeholder="email" id="email">
-                </fieldset>
-                <fieldset>
-                    <input type="password" placeholder="enter your password" id="pass">
-                </fieldset>
-                <fieldset>
-                    <label><input type="checkbox" id="terms">I agree to the <a href=terms.html>terms and conditions</a></label>
-                </fieldset>                
+
+                <div class="other-info">
+                    <fieldset><input type="email" placeholder="email" id="email"></fieldset>
+                    <fieldset><input type="password" placeholder="enter your password" id="pass" pattern="(?=.*\d).{7,}" required title="Password must be at least 7 characters long and include at least one number."></fieldset>
+                </div>
+        
+                <div>
+                    <fieldset><label for="terms"><input type="checkbox" id="terms" required> I agree to the <a href=terms.html>terms and conditions</a></label></fieldset>
+                </div>
+
                 <input type="submit" value="Create your account :)" id="submit">
             </form>
 
